@@ -13,6 +13,8 @@ from shot import Shot
 
 
 class Player(CircleShape):
+    containers: tuple
+
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
@@ -27,7 +29,7 @@ class Player(CircleShape):
         return [a, b, c]
 
     def draw(self, screen):
-        pygame.draw.polygon(screen, "white", self.triangle(), LINE_WIDTH)
+        pygame.draw.polygon(screen, "white", self.triangle(), LINE_WIDTH)  # type: ignore
 
     def update(self, dt):
         self.shot_cd -= dt

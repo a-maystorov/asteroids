@@ -3,9 +3,11 @@ import pygame
 
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
+    containers: tuple
+
     def __init__(self, x, y, radius):
         if hasattr(self, "containers"):
-            super().__init__(self.containers)
+            super().__init__(*self.containers)
         else:
             super().__init__()
 

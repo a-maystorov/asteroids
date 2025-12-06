@@ -14,6 +14,8 @@ from constants import (
 
 
 class AsteroidField(pygame.sprite.Sprite):
+    containers: tuple
+
     edges = [
         [
             pygame.Vector2(1, 0),
@@ -38,7 +40,7 @@ class AsteroidField(pygame.sprite.Sprite):
     ]
 
     def __init__(self):
-        pygame.sprite.Sprite.__init__(self, self.containers)
+        pygame.sprite.Sprite.__init__(self, *self.containers)
         self.spawn_timer = 0.0
 
     def spawn(self, radius, position, velocity):
