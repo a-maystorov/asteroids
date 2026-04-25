@@ -29,7 +29,10 @@ def main():
     Player.containers = (updatable, drawable)
     asteroid_field = AsteroidField()
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player_x_pos = SCREEN_WIDTH / 2
+    player_y_pos = SCREEN_HEIGHT / 2
+
+    player = Player(player_x_pos, player_y_pos)
 
     dt = 0
 
